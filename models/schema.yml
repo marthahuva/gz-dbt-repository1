@@ -2,13 +2,14 @@ version: 2
 sources:
   - name: raw
     schema: gz_raw_data
+    description: greenweez raw data source
     tables:
       - name: sales
         identifier: raw_gz_sales
-        description: greenweez raw data source
+        description: sales of greenweez/we only have one row per products_id found in each orders_id
         columns:
           - name: date_date
-            description: Date of the order
+            description: Date of the purchase
           - name: orders_id
             description: Foreign key corresponding to the order number  
           - name: products_id1
@@ -35,8 +36,10 @@ sources:
               - unique
               - not_null
           - name: purchase_price
+            description: the purchase price of the product
       - name: ship
         identifier: raw_gz_ship
+        description: ship of Greenweez
         columns:
           - name: shipping_fee
           - name: log_cost
